@@ -1,0 +1,23 @@
+spring:
+  profiles:
+       active: dev
+  cloud:
+    consul:
+      config:
+        #启用consul config
+        enabled: true
+        #配置文件的前缀文件夹名
+        prefix: config
+        #共享配置的文件夹名
+        defaultContext: share
+        #profile配置的文件夹名分隔符
+        profileSeparator: '.'
+        #不管你是YAML,还是PROPERTIES，他们2中格式的文件都会加载
+#        format: YAML
+        format: PROPERTIES
+        data-key: data
+
+management:
+        security:
+            #refresh端口放开权限校验
+            enabled: false
